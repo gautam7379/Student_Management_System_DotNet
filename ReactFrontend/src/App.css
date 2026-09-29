@@ -1,0 +1,1386 @@
+/* ================================
+   Main Application
+================================ */
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 0% 20%, rgba(190, 140, 255, 0.25), transparent 22%),
+    radial-gradient(circle at 100% 20%, rgba(80, 190, 255, 0.25), transparent 22%),
+    #f4f6ff;
+  color: #17213a;
+}
+
+
+/* ================================
+   Header
+================================ */
+
+.header {
+  height: 72px;
+  background: linear-gradient(90deg, #0866f5, #3158e8);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+
+/* ================================
+   Dashboard
+================================ */
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 20px 35px;
+}
+
+
+/* ================================
+   Welcome
+================================ */
+
+.welcome {
+  display: inline-block;
+
+  padding: 9px 18px;
+  margin-bottom: 14px;
+
+  border-radius: 30px;
+
+  background: #e7edff;
+  color: #17213a;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow: 0 5px 18px rgba(70, 90, 150, 0.08);
+}
+
+
+/* ================================
+   Hero Section
+================================ */
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.hero-section h1 {
+  margin: 0;
+
+  font-size: 44px;
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+}
+
+.hero-section h1 span {
+  background: linear-gradient(90deg, #2463ed, #7a2df2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-section p {
+  margin: 10px 0;
+
+  color: #65708b;
+  font-size: 15px;
+}
+
+.hero-icon {
+  margin-top: 16px;
+  font-size: 22px;
+}
+
+
+/* ================================
+   Service Cards
+================================ */
+
+.cards {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+.card {
+  position: relative;
+
+  min-height: 180px;
+
+  padding: 22px 25px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(35, 50, 100, 0.10);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 14px 30px rgba(35, 50, 100, 0.16);
+}
+
+.card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  right: -35px;
+  bottom: -45px;
+
+  border-radius: 50%;
+
+  background: rgba(80, 130, 255, 0.15);
+}
+
+.card-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 27px;
+
+  margin-bottom: 10px;
+
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+  margin: 0 0 8px;
+
+  font-size: 21px;
+}
+
+.card p {
+  margin: 0 0 17px;
+
+  color: #65708b;
+
+  font-size: 14px;
+}
+
+
+/* Card Colors */
+
+.students .card-icon {
+  background: #3180ee;
+}
+
+.teachers .card-icon {
+  background: #28b867;
+}
+
+.courses .card-icon {
+  background: #ef3152;
+}
+
+.attendance .card-icon {
+  background: #f79524;
+}
+
+.results .card-icon {
+  background: #8244ed;
+}
+
+
+/* Buttons */
+
+.card-button {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  width: 100%;
+
+  padding: 10px;
+
+  border: none;
+  border-radius: 8px;
+
+  color: white;
+  text-decoration: none;
+  text-align: center;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.card-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.students .card-button {
+  background: #1765ed;
+}
+
+.teachers .card-button {
+  background: #13a94f;
+}
+
+.courses .card-button {
+  background: #ef1742;
+}
+
+.attendance .card-button {
+  background: #ff8b0b;
+}
+
+.results .card-button {
+  background: #7532e8;
+}
+
+
+/* ================================
+   Statistics
+================================ */
+
+.statistics {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  background: white;
+
+  border-radius: 16px;
+
+  margin-top: 18px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 8px 25px rgba(35, 50, 100, 0.08);
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 0 20px;
+
+  border-right: 1px solid #e2e6ef;
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 23px;
+
+  background: #e9f0ff;
+}
+
+.stat strong {
+  display: block;
+
+  font-size: 18px;
+
+  margin-bottom: 4px;
+}
+
+.stat span {
+  color: #69748c;
+
+  font-size: 12px;
+}
+
+
+/* ================================
+   Features
+================================ */
+
+.features {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 18px;
+
+  padding: 20px;
+
+  background: white;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(35, 50, 100, 0.08);
+}
+
+.feature {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 0 20px;
+
+  border-right: 1px solid #e2e6ef;
+}
+
+.feature:last-child {
+  border-right: none;
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 22px;
+
+  background: #e9f0ff;
+}
+
+.feature h3 {
+  margin: 0 0 5px;
+
+  font-size: 14px;
+}
+
+.feature p {
+  margin: 0;
+
+  color: #69748c;
+
+  font-size: 11px;
+}
+
+
+/* ================================
+   Footer
+================================ */
+
+.footer {
+  text-align: center;
+
+  padding: 20px;
+
+  color: #65708b;
+
+  font-size: 13px;
+}
+
+
+/* ================================
+   Responsive
+================================ */
+
+@media (max-width: 900px) {
+
+  .header {
+    height: auto;
+
+    padding: 18px 20px;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statistics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .stat {
+    border-right: none;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .feature {
+    border-right: none;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .dashboard {
+    padding: 20px 12px;
+  }
+
+  .hero-section h1 {
+    font-size: 30px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .statistics {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .nav a {
+    font-size: 12px;
+  }
+}
+
+
+/* ================================
+   Student Management
+================================ */
+
+.management-section {
+  margin-top: 20px;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 25px rgba(35, 50, 100, 0.08);
+}
+
+.management-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.management-header h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.management-header p {
+  margin: 0;
+  color: #69748c;
+  font-size: 13px;
+}
+
+.add-button {
+  border: none;
+  background: #1765ed;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  filter: brightness(1.05);
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+thead {
+  background: #f3f6ff;
+}
+
+th {
+  padding: 13px 12px;
+  text-align: left;
+  font-size: 12px;
+  color: #4d5872;
+  white-space: nowrap;
+}
+
+td {
+  padding: 13px 12px;
+  border-top: 1px solid #e8ebf3;
+  font-size: 13px;
+  color: #26324d;
+}
+
+tbody tr:hover {
+  background: #fafbff;
+}
+
+.actions {
+  white-space: nowrap;
+}
+
+.edit-button,
+.delete-button {
+  border: none;
+  padding: 7px 11px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.edit-button {
+  background: #e9f0ff;
+  color: #1765ed;
+}
+
+.delete-button {
+  background: #ffe9ed;
+  color: #e51b3e;
+}
+
+
+/* ================================
+   Management Page
+================================ */
+
+.management-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 35px 20px;
+  min-height: calc(100vh - 140px);
+}
+
+.management-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.management-title h1 {
+  margin: 0 0 8px;
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.management-title p {
+  margin: 0;
+  color: #69748c;
+  font-size: 14px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #e9f0ff;
+  color: #1765ed;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.back-button:hover {
+  background: #dce7ff;
+}
+
+
+/* ================================
+   Management Section
+================================ */
+
+.management-section {
+  margin-top: 0;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 25px rgba(35, 50, 100, 0.08);
+}
+
+/* ================================
+   Student Form
+================================ */
+
+.message {
+  margin-bottom: 18px;
+  padding: 11px 14px;
+  border-radius: 8px;
+  background: #e9f7ef;
+  color: #16803c;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.student-form {
+  margin-bottom: 25px;
+  padding: 22px;
+  background: #f8faff;
+  border: 1px solid #e1e7f5;
+  border-radius: 12px;
+}
+
+.student-form h3 {
+  margin: 0 0 18px;
+  font-size: 19px;
+  color: #17213a;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4d5872;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d7deed;
+  border-radius: 7px;
+  background: white;
+  color: #26324d;
+  font-size: 13px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #1765ed;
+  box-shadow: 0 0 0 3px rgba(23, 101, 237, 0.10);
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.save-button,
+.cancel-button {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.save-button {
+  background: #1765ed;
+  color: white;
+}
+
+.cancel-button {
+  background: #e8ecf4;
+  color: #4d5872;
+}
+
+.save-button:hover {
+  filter: brightness(1.05);
+}
+
+.cancel-button:hover {
+  background: #dce1eb;
+}
+
+.save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 30px;
+  color: #69748c;
+}
+
+/* ================================
+   Teacher Management
+================================ */
+
+.teacher-salary {
+  font-weight: 700;
+  color: #16803c;
+}
+
+/* ================================
+   Attendance Status
+================================ */
+
+.attendance-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.status-present {
+  background: #e5f8ed;
+  color: #16803c;
+}
+
+.status-absent {
+  background: #ffe8ec;
+  color: #d91e3d;
+}
+
+.status-late {
+  background: #fff1dc;
+  color: #d87900;
+}
+
+
+/* ================================
+   Select
+================================ */
+
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d7deed;
+  border-radius: 7px;
+  background: white;
+  color: #26324d;
+  font-size: 13px;
+  outline: none;
+}
+
+.form-group select:focus {
+  border-color: #1765ed;
+  box-shadow: 0 0 0 3px rgba(23, 101, 237, 0.10);
+}
+
+/* ================================
+   Result Management
+================================ */
+
+.result-grade {
+  display: inline-block;
+  min-width: 35px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #eee7ff;
+  color: #7532e8;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+
+/* ================================
+   Result Form
+================================ */
+
+.student-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d7deed;
+  border-radius: 7px;
+  background: white;
+  color: #26324d;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: vertical;
+  outline: none;
+}
+
+.student-form textarea:focus {
+  border-color: #1765ed;
+  box-shadow: 0 0 0 3px rgba(23, 101, 237, 0.10);
+}
+
+
+/* ================================
+   Result Card Button
+================================ */
+
+.results .card-button {
+  background: #7532e8;
+}
+
+
+/* =========================================
+   RESULT PAGE - SAME LAYOUT AS OTHER PAGES
+========================================= */
+
+.management-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.management-page-header h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  color: #16213e;
+}
+
+.management-page-header p {
+  margin: 0;
+  color: #69748c;
+  font-size: 13px;
+}
+
+
+/* Back to Dashboard */
+
+.back-button {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 7px;
+  background: #eaf1ff;
+  color: #1765ed;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.back-button:hover {
+  background: #dce8ff;
+}
+
+
+/* Result form */
+
+.result-form-section {
+  margin-bottom: 20px;
+}
+
+.result-form-section .management-header {
+  margin-bottom: 20px;
+}
+
+
+/* Result grade */
+
+.result-grade {
+  display: inline-block;
+  min-width: 34px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #eee7ff;
+  color: #7532e8;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+
+/* Textarea */
+
+.student-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d7deed;
+  border-radius: 7px;
+  background: white;
+  color: #26324d;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: vertical;
+  outline: none;
+}
+
+.student-form textarea:focus {
+  border-color: #1765ed;
+  box-shadow: 0 0 0 3px rgba(23, 101, 237, 0.10);
+}
+
+
+/* Select */
+
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d7deed;
+  border-radius: 7px;
+  background: white;
+  color: #26324d;
+  font-size: 13px;
+  outline: none;
+}
+
+.form-group select:focus {
+  border-color: #1765ed;
+  box-shadow: 0 0 0 3px rgba(23, 101, 237, 0.10);
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .management-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .back-button {
+    margin-top: 5px;
+  }
+
+}
+/* =========================================
+   STICK FOOTER TO BOTTOM
+========================================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard {
+  flex: 1;
+}
+
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  background:
+    radial-gradient(
+      circle at top left,
+      #e9ddff 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at top right,
+      #d9efff 0%,
+      transparent 35%
+    ),
+    #f3f6ff;
+}
+
+
+/* Login Card */
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  background: white;
+  border-radius: 18px;
+  box-shadow:
+    0 15px 45px rgba(35, 50, 100, 0.15);
+  text-align: center;
+}
+
+
+/* Logo */
+
+.login-logo {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eaf1ff;
+  font-size: 32px;
+}
+
+
+.login-card h1 {
+  margin: 0;
+  color: #16213e;
+  font-size: 25px;
+}
+
+
+.login-subtitle {
+  margin: 8px 0 28px;
+  color: #69748c;
+  font-size: 14px;
+}
+
+
+/* Error */
+
+.login-error {
+  margin-bottom: 18px;
+  padding: 10px 12px;
+  border-radius: 7px;
+  background: #ffe8ec;
+  color: #d91e3d;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* Form */
+
+.login-form-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+
+.login-form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #26324d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.login-form-group input {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #d7deed;
+  border-radius: 8px;
+  background: white;
+  color: #26324d;
+  font-size: 14px;
+  outline: none;
+}
+
+
+.login-form-group input:focus {
+  border-color: #1765ed;
+  box-shadow:
+    0 0 0 3px rgba(23, 101, 237, 0.10);
+}
+
+
+/* Login Button */
+
+.login-button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #1765ed;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+.login-button:hover {
+  filter: brightness(1.05);
+}
+
+
+.login-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+
+/* Login Info */
+
+.login-info {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid #e8ebf3;
+}
+
+
+.login-info p {
+  margin: 0;
+  color: #69748c;
+  font-size: 12px;
+}
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.logout-button {
+  border: none;
+  background: transparent;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+
+.logout-button:hover {
+  opacity: 0.8;
+}
+
+.chatbot-floating-button {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 58px;
+  height: 58px;
+  border: none;
+  border-radius: 50%;
+  background: #1765ed;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(23, 101, 237, 0.35);
+  z-index: 1000;
+  transition: 0.2s;
+}
+
+.chatbot-floating-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(23, 101, 237, 0.45);
+}
+
+.chatbot-window {
+  position: fixed;
+  right: 25px;
+  bottom: 95px;
+  width: 360px;
+  height: 500px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(35, 50, 100, 0.22);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  border: 1px solid #e3e8f4;
+}
+
+.chatbot-header {
+  background: #1765ed;
+  color: white;
+  padding: 15px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatbot-header div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.chatbot-header strong {
+  font-size: 15px;
+}
+
+.chatbot-header span {
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.chatbot-close {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #f5f7fc;
+}
+
+.chat-message {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.chat-message.user {
+  justify-content: flex-end;
+}
+
+.chat-message.assistant {
+  justify-content: flex-start;
+}
+
+.chat-message-content {
+  max-width: 80%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.chat-message.user .chat-message-content {
+  background: #1765ed;
+  color: white;
+  border-bottom-right-radius: 3px;
+}
+
+.chat-message.assistant .chat-message-content {
+  background: white;
+  color: #26324d;
+  border: 1px solid #e2e7f1;
+  border-bottom-left-radius: 3px;
+}
+
+.chatbot-input-area {
+  padding: 12px;
+  border-top: 1px solid #e3e8f4;
+  background: white;
+  display: flex;
+  gap: 8px;
+}
+
+.chatbot-input-area textarea {
+  flex: 1;
+  min-width: 0;
+  resize: none;
+  padding: 9px 10px;
+  border: 1px solid #d7deed;
+  border-radius: 7px;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #26324d;
+}
+
+.chatbot-input-area textarea:focus {
+  border-color: #1765ed;
+}
+
+.chatbot-input-area button {
+  align-self: stretch;
+  border: none;
+  border-radius: 7px;
+  padding: 0 13px;
+  background: #1765ed;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chatbot-input-area button:hover {
+  opacity: 0.9;
+}
+
+.chatbot-input-area button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .chatbot-window {
+    right: 12px;
+    bottom: 82px;
+    width: calc(100vw - 24px);
+    height: 70vh;
+  }
+
+  .chatbot-floating-button {
+    right: 15px;
+    bottom: 15px;
+  }
+}

@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="ApiGateway/ApiGateway.csproj" Id="c7b43f57-dab7-4dea-bb28-77f2ff120191" />
+  <Project Path="AttendanceService/AttendanceService.csproj" Id="4459aa3a-5a7d-4766-ae9a-b929c42f1dd3" />
+  <Project Path="ChatbotService/ChatbotService.csproj" Id="8f34da84-ce94-4a9a-a8dc-0b40f0f02dc6" />
+  <Project Path="CourseService/CourseService.csproj" Id="e482fc08-44c7-4542-8d4c-e066166959cf" />
+  <Project Path="MicroServices/MicroServices.csproj" />
+  <Project Path="ResultService/ResultService.csproj" Id="0198676a-26b3-4639-a250-378b417bd502" />
+  <Project Path="StudentService/StudentService.csproj" Id="d051d0d2-a27b-4925-922e-5956d56158c0" />
+  <Project Path="TeacherServices/TeacherServices.csproj" />
+</Solution>
